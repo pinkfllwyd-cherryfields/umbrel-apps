@@ -1,0 +1,35 @@
+manifestVersion: 2.0
+id: cherryfields-couchdb
+storage:
+  dataRoot: data
+category: files
+name: CouchDB (Obsidian LiveSync)
+version: "3.4.3"
+tagline: CouchDB sync server for Obsidian Self-hosted LiveSync
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/couchdb.png
+description: >-
+  Apache CouchDB 3.4, preconfigured for the Obsidian Self-hosted LiveSync plugin
+  (CORS for app://obsidian.md and capacitor://localhost, large request and document sizes,
+  authentication required).
+
+
+  Log in as `obsidian` with the password shown in umbrel. The app opens CouchDB's
+  admin UI at /_utils. Point LiveSync at an HTTPS hostname served by a reverse proxy
+  (e.g. Nginx Proxy Manager → cherryfields-couchdb_couchdb_1:5984).
+releaseNotes: ""
+
+developer: Apache Software Foundation
+website: https://couchdb.apache.org
+dependencies: []
+repo: https://github.com/apache/couchdb
+support: https://github.com/vrtmrz/obsidian-livesync
+
+port: 5984
+gallery: []
+path: "/_utils/"
+
+defaultUsername: "obsidian"
+deterministicPassword: true
+
+submitter: cherryfields
+submission: ""

@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: cherryfields-couchdb_couchdb_1
+      APP_PORT: 5984
+
+  couchdb:
+    image: couchdb:3.4.3@sha256:d9b6609989f1d47822e84005946cecc2fd49e4be5e4f35da960d4379f6c60de0
+    restart: on-failure
+    stop_grace_period: 1m
+    environment:
+      COUCHDB_USER: obsidian
+      COUCHDB_PASSWORD: ${APP_PASSWORD}
+    volumes:
+      - ${APP_DATA_DIR}/data/couchdb:/opt/couchdb/data
+      - ${APP_DATA_DIR}/data/config:/opt/couchdb/etc/local.d
