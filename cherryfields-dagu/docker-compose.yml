@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: cherryfields-dagu_dagu_1
+      APP_PORT: 8080
+
+  dagu:
+    image: ghcr.io/dagucloud/dagu:2.19.2@sha256:52a600df6e072653e3a9baad57bedc08b3b524e5a4fdc3f9414d6fcf197a691b
+    restart: on-failure
+    stop_grace_period: 1m
+    environment:
+      DAGU_HOME: /var/lib/dagu
+      DAGU_TZ: Europe/Berlin
+      TZ: Europe/Berlin
+      PUID: 1000
+      PGID: 1000
+      DAGU_AUTH_MODE: basic
+      DAGU_AUTH_BASIC_USERNAME: admin
+      DAGU_AUTH_BASIC_PASSWORD: ${APP_PASSWORD}
+    volumes:
+      # Jobs (dags/), logs and run history; the DAG YAML files can be backed up from here
+      - ${APP_DATA_DIR}/data/dagu:/var/lib/dagu

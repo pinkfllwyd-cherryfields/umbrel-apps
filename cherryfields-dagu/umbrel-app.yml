@@ -1,0 +1,37 @@
+manifestVersion: 2.0
+id: cherryfields-dagu
+storage:
+  dataRoot: data
+category: developer
+name: Dagu
+version: "2.19.2"
+tagline: Cron jobs and scripts with a web UI
+icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/dagu.png
+description: >-
+  Dagu runs scheduled jobs and scripts. Each job is a small YAML file with a cron
+  schedule and one or more steps (shell commands, scripts, HTTP calls), edited in the
+  web UI. Shows run history and logs, can run jobs by hand, retry failed steps and send
+  notifications on failure.
+
+
+  Log in as `admin` with the password shown in umbrel. Jobs run inside this app's
+  container (Ubuntu 24.04 with bash and sudo), not on the umbrel host. Other apps are
+  reachable by container name, e.g. http://paperless_webserver_1:8000. Network shares
+  can be added under the app's settings as custom folders.
+releaseNotes: ""
+
+developer: Yota Hamada
+website: https://dagu.cloud
+dependencies: []
+repo: https://github.com/dagucloud/dagu
+support: https://github.com/dagucloud/dagu/issues
+
+port: 8467
+gallery: []
+path: ""
+
+defaultUsername: "admin"
+deterministicPassword: true
+
+submitter: cherryfields
+submission: ""
