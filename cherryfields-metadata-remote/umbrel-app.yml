@@ -1,16 +1,23 @@
-version: "3.7"
-
-services:
-  app_proxy:
-    environment:
-      APP_HOST: cherryfields-metadata-remote_web_1
-      APP_PORT: 8338
-
-  web:
-    image: ghcr.io/wow-signal-dev/metadata-remote:latest  # pin to a version tag or @sha256 digest once it works
-    restart: on-failure
-    environment:
-      PUID: 1000
-      PGID: 1000
-    volumes:
-      - ${UMBREL_ROOT}/data/storage/music:/music
+manifestVersion: 1
+id: cherryfields-metadata-remote
+category: media
+name: Metadata Remote
+version: "1.2.0"
+tagline: Edit audio file metadata from your browser
+description: >-
+  Web-based audio metadata editor for headless servers. Browse your music
+  folder, edit tags and extended fields, and manage cover art directly on
+  the files, with no library import step.
+developer: wow-signal-dev
+website: https://github.com/wow-signal-dev/metadata-remote
+repo: https://github.com/wow-signal-dev/metadata-remote
+support: https://github.com/wow-signal-dev/metadata-remote/issues
+port: 8338
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+dependencies: []
+releaseNotes: ""
+submitter: cherryfields
+submission: ""
