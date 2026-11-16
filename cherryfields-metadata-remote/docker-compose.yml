@@ -3,14 +3,17 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: cherryfields-metadata-remote_web_1
+      APP_HOST: cherryfields-metadata-remote_metadata-remote_1
       APP_PORT: 8338
 
-  web:
-    image: ghcr.io/wow-signal-dev/metadata-remote:latest  # pin to a version tag or @sha256 digest once it works
+  metadata-remote:
+    image: ghcr.io/wow-signal-dev/metadata-remote:latest  # TODO: pin to <version>@sha256:<digest> like the other apps
     restart: on-failure
+    stop_grace_period: 1m
     environment:
+      TZ: Europe/Berlin
       PUID: 1000
       PGID: 1000
     volumes:
+      # Music library, mounted read-write so tag edits are written to the files
       - ${UMBREL_ROOT}/data/storage/music:/music
