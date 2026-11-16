@@ -1,4 +1,4 @@
-manifestVersion: 1
+manifestVersion: 2.0
 id: cherryfields-metadata-remote
 category: media
 name: Metadata Remote
@@ -8,16 +8,25 @@ description: >-
   Web-based audio metadata editor for headless servers. Browse your music
   folder, edit tags and extended fields, and manage cover art directly on
   the files, with no library import step.
+
+
+  Mounts the music folder at /music (read-write), so edits are written straight
+  to the audio files. The app has no login of its own; access is protected by
+  umbrelOS.
+releaseNotes: ""
+
 developer: wow-signal-dev
 website: https://github.com/wow-signal-dev/metadata-remote
+dependencies: []
 repo: https://github.com/wow-signal-dev/metadata-remote
 support: https://github.com/wow-signal-dev/metadata-remote/issues
+
 port: 8338
 gallery: []
 path: ""
+
 defaultUsername: ""
 defaultPassword: ""
-dependencies: []
-releaseNotes: ""
+
 submitter: cherryfields
 submission: ""
