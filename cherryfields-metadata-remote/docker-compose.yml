@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: cherryfields-metadata-remote_web_1
+      APP_PORT: 8338
+
+  web:
+    image: ghcr.io/wow-signal-dev/metadata-remote:latest  # pin to a version tag or @sha256 digest once it works
+    restart: on-failure
+    environment:
+      PUID: 1000
+      PGID: 1000
+    volumes:
+      - ${UMBREL_ROOT}/data/storage/music:/music
