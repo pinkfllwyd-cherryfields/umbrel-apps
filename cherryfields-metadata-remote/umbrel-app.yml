@@ -4,6 +4,7 @@ category: media
 name: Metadata Remote
 version: "1.2.0"
 tagline: Edit audio file metadata from your browser
+icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/metadata-remote.png
 description: >-
   Web-based audio metadata editor for headless servers. Browse your music
   folder, edit tags and extended fields, and manage cover art directly on
