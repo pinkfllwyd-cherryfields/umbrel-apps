@@ -1,0 +1,6 @@
+# cherryfields-files-mcp: generated at runtime
+cherryfields-files-mcp/data/api-key
+cherryfields-files-mcp/data/node_modules/
+cherryfields-files-mcp/data/.npm/
+cherryfields-files-mcp/data/.installed
+cherryfields-files-mcp/data/package*.json

@@ -1,0 +1,30 @@
+manifestVersion: 2.0
+id: cherryfields-files-mcp
+storage:
+  dataRoot: data
+category: developer
+name: Files MCP
+version: "1.0.0"
+tagline: Give Claude access to selected folders only
+icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/mcp.png
+description: >-
+  A small MCP server that exposes only the folders you mount into it, over Streamable HTTP
+  at /mcp. Folders can be read-only or read-write. Requests need the API key generated on
+  first start (data/api-key in the app's data folder).
+releaseNotes: ""
+
+developer: cherryfields
+website: https://github.com/supercorp-ai/supergateway
+dependencies: []
+repo: https://github.com/modelcontextprotocol/servers
+support: https://github.com/modelcontextprotocol/servers/issues
+
+port: 3940
+gallery: []
+path: "/healthz"
+
+defaultUsername: ""
+defaultPassword: ""
+
+submitter: cherryfields
+submission: ""

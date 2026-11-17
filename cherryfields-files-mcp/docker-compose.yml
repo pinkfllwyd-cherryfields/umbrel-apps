@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: cherryfields-files-mcp_server_1
+      APP_PORT: 8000
+
+  server:
+    image: node:22-alpine@sha256:1314fb30ec37592d5845e5a160d522c0e680972aa534549940b8d73bde88481a
+    user: "1000:1000"
+    restart: on-failure
+    entrypoint: ["sh", "/entrypoint.sh"]
+    environment:
+      HOME: /app
+      npm_config_cache: /app/.npm
+    ports:
+      - "3941:8000"   # direct port for Nginx Proxy Manager; Hetzner firewall keeps it off the internet
+    volumes:
+      - ${APP_DATA_DIR}/entrypoint.sh:/entrypoint.sh:ro
+      # npm packages, cache and the generated api-key
+      - ${APP_DATA_DIR}/data:/app
+      # Folders Claude may see. Create them first in the Umbrel Files app.
+      - ${UMBREL_ROOT}/home/Claude:/data/scratch
+      # Read-only example:
+      # - ${UMBREL_ROOT}/home/Documents/Shared-with-Claude:/data/shared:ro
